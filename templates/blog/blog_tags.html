@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% load wagtailcore_tags static %}
+{% block title %}{{ page.seo_title|default:page.title }}{% endblock %}
+{% block description %}{{ page }}{% endblock %}
+
+{% block content %}
+    <div class="text-center mb-2 mt-2">
+        <a href="{% pageurl page.get_blog_main %}">
+            <div class="text-xl">{{ page.get_blog_main.title }}</div>
+        </a>
+        {% if page.get_blog_main.sub_heading %}
+            <br>
+            <div class="text-lg  text-slate-600">{{ page.get_blog_main.sub_heading }}</div>
+        {% endif %}
+    </div>
+    <div class="text-center mt-5 mb-5">
+        <h1>{{ page.title }}</h1>
+    </div>
+
+    <div class="mx-auto w-1/3 text-center">
+        {% for tag in all_tags %}
+
+            <a href="{{ tag.url }}">
+                #{{ tag.tag.name }}
+            </a>
+            <br>
+        {% endfor %}
+    </div>
+{% endblock %}

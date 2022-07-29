@@ -1,0 +1,38 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}SpeedPyCom{% endblock title %}</title>
+    <meta charset="UTF-8">
+    {% block extra_head %}
+        <meta name="description" content='Free Django Project Template'>
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+    <script src="{% static 'main/alpine.min.js' %}" defer></script>
+    <script src="{% static 'main/versoly-ui.js' %}" defer></script>
+</head>
+
+<body class="font-sans-serif leading-normal tracking-normal">
+{% block content %}
+
+{% endblock %}
+<footer class="bg-white">
+    <div class="max-w-4xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+            <div class="px-5 py-2">
+                <a href="https://appliku.com" target="_blank" class="text-base text-gray-500 hover:text-gray-900">Django
+                    app
+                    deployed with Appliku.com</a>
+            </div>
+            <div class="px-5 py-2">
+                <a href="https://speedpy.com" target="_blank" class="text-base text-gray-500 hover:text-gray-900">Django
+                    SaaS template Speedpy.com</a>
+            </div>
+        </nav>
+    </div>
+</footer>
+
+</body>
+</html>
